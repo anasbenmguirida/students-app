@@ -18,6 +18,7 @@ class Etudiant extends Authenticatable
         'prenom',
         'email',
         'password',
+        'role',
     ];
 
     protected $hidden = [

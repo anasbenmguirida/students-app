@@ -25,13 +25,12 @@ class AuthController extends Controller
             'prenom' => $data['prenom'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            //'role' => 'Etudiant',
+            'role' => 'etudiant',
             ]);
         }
         if($user){
-        return response()->json([
-        'message' => 'un utilisateur est créé', ], 201);
-        } 
+        return redirect()->route('login') ; 
+        }
         else{
             return response()->json([ 'message' => 'un erreur est survenue']) ; 
         }  
@@ -45,7 +44,7 @@ class AuthController extends Controller
             'password' => 'string|required',
         ]);
         
-        // chercher l'email dand la BD
+        // chercher l'email dand la BD reste a configure le role 
         if(Auth::attempt($fields)){
         return redirect()->route('profile');
         }

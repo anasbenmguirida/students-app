@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
-    <link rel="stylesheet" href="{{ 'public/css/style.css' }}">
+    <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <style>
         /* Reset some default styles */
         * {
@@ -78,7 +78,7 @@
         }
 
         main .buttons button {
-            background: #ffcc00;
+            background: #ffa500;
             color: #000;
             border: none;
             padding: 1rem 2rem;
@@ -89,7 +89,7 @@
         }
 
         main .buttons button:hover {
-            background: #e6b800;
+            background: #e69500;
         }
 
         main .buttons button a {
@@ -124,6 +124,25 @@
 
         footer p {
             margin: 0;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            main h1 {
+                font-size: 2rem;
+            }
+
+            main p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            section p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>

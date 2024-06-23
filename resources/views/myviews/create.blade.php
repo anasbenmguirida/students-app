@@ -20,7 +20,7 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
         }
         .form-group {
             margin-bottom: 15px;
@@ -31,7 +31,7 @@
             font-weight: bold;
         }
         .form-group input {
-            width: 100%;
+            width: 95%;
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
@@ -64,6 +64,10 @@
             background-color: #0056b3;
            
         }
+        h3{
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -71,6 +75,7 @@
         <form action="{{route('save')}}" method="POST">
             @csrf
             <div class="form-group">
+                <h3>Creer votre compte ! </h3>
                 <label for="nom">Nom:</label>
                 <input type="text" id="nom" name="nom" required>
             </div>

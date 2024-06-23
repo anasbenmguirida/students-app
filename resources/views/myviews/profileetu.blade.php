@@ -37,7 +37,7 @@
         }
 
         th {
-            background-color: #f4f4f4;
+            background-color: skyblue;
         }
 
         input[type="checkbox"] {
@@ -52,13 +52,15 @@
             <thead>
                 <tr>
                     <th>Nom étudiant</th>
-                    <th>Presence</th>
+                    <th>Present</th>
+                    <th>abscent</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($etudiants as $etudiant)
                 <tr>
                     <td>{{ $etudiant->nom }} {{$etudiant->prenom}}</td>
+                    <td><input type="checkbox" class="student-checkbox"></td>
                     <td><input type="checkbox" class="student-checkbox"></td>
                 </tr>
                 @endforeach
