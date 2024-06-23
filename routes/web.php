@@ -1,5 +1,4 @@
 <?php
-
 //use Illuminate\Routing\ViewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
@@ -14,12 +13,12 @@ use App\Http\Controllers\ViewController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// route public : 
 Route::get('/' , [ViewController::class , 'bienvenue']) ; 
-
 Route::get('/signup' , [ViewController::class , 'createAccount'])->name('signup') ;
-
 Route::get('/login' , [ViewController::class , 'ConnectToAccount'])->name('login'); 
 
+// route authentifie 
 Route::middleware('auth:sanctum')->get('/profile' , [ViewController::class , 'showprofile'])->name('profile'); 
 
 

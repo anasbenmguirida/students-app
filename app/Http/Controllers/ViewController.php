@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Etudiant;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
@@ -18,6 +19,8 @@ class ViewController extends Controller
         return view('myviews.create') ; 
     }
     public function showprofile(){
-        return view('myviews.profileetu') ;
+        $etudiants = Etudiant::all();
+        return view('myviews.profileetu', compact('etudiants'));
+       
     }
 }
