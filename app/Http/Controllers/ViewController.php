@@ -19,8 +19,8 @@ class ViewController extends Controller
         return view('myviews.create') ; 
     }
     public function showprofile(){
-        $etudiants = Etudiant::all();
-        return view('myviews.profileetu', compact('etudiants'));
+        $etudiants = Etudiant::where('role', '=' ,  'etudiant')->get();
+        return view('myviews.admin_profile', compact('etudiants'));
        
     }
 }
