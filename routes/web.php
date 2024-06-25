@@ -19,7 +19,8 @@ Route::get('/signup' , [ViewController::class , 'createAccount'])->name('signup'
 Route::get('/login' , [ViewController::class , 'ConnectToAccount'])->name('login'); 
 
 // route authentifie 
-Route::middleware('auth:sanctum' , 'role:admin')->get('/profile' , [ViewController::class , 'showprofile'])->name('profile'); 
+Route::middleware('auth:sanctum' , 'role:admin')->get('/profile' , [ViewController::class , 'showAdminprofile'])->name('profile'); 
+Route::middleware('auth:sanctum' , 'role:etudiant')->get('/profile_etu' , [ViewController::class , 'showstudentprofile'])->name('profile_etu'); 
 
 
 /*Route::get('/', function () {

@@ -45,15 +45,20 @@ class AuthController extends Controller
         ]);
         
         // chercher l'email dand la BD reste a configure le role 
-        if(Auth::attempt($fields)){
-        return redirect()->route('profile');
-        }
-        else{
-            return response()->json([
-                'message'=>'something went wrong , try again'
-            ]);
+        if (Auth::attempt($fields)) {
+            $user = Auth::user(); // Get the authenticated user
+    
+            if ($user->role == 'admin') {
+                return redirect()->route('profile');
+            } else if ($user->role == 'etudiant') {
+                return redirect()->route('profile_etu');
+            } else {
+            return redirect()->route('login')->with('error', 'Unauthorized role.');
+            }
+        } else {
+            // Handle failed login attempt
+            return redirect()->route('login')->with('error', 'Invalid credentials.');
         }
     }
-
     
 }
