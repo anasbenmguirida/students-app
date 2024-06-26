@@ -1,5 +1,7 @@
 <?php
 //use Illuminate\Routing\ViewController;
+
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
 
@@ -21,6 +23,7 @@ Route::get('/login' , [ViewController::class , 'ConnectToAccount'])->name('login
 // route authentifie 
 Route::middleware('auth:sanctum' , 'role:admin')->get('/profile' , [ViewController::class , 'showAdminprofile'])->name('profile'); 
 Route::middleware('auth:sanctum' , 'role:etudiant')->get('/profile_etu' , [ViewController::class , 'showstudentprofile'])->name('profile_etu'); 
+Route::middleware('auth:sanctum' , 'role:etudiant|admin')->get('/logout' , [AuthController::class , 'logout'])->name('logout'); 
 
 
 /*Route::get('/', function () {

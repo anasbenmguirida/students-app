@@ -1,67 +1,113 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
     margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f5f5f5;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: rgb(8, 8, 116);
+    color: #fff;
+    position: fixed;
+    height: 100%;
     padding: 20px;
-    box-sizing: border-box;
 }
-.container {
-    background-color: #fff;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-}
-.profile-container {
-    text-align: center;
-    margin-bottom: 30px;
-}
-.profile-container h3 {
-    margin: 20px 0;
-    color: #333;
-}
-.profile-container .name,
-.profile-container .prenom {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-.profile-container .label {
-    font-weight: normal;
-    color: #555;
-}
-.document-request {
-    margin-top: 30px;
-}
-.document-request h3 {
-    margin-bottom: 20px;
-    color: #333;
-}
-.document-request label {
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
     display: block;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
-.document-request input[type="checkbox"] {
-    margin-right: 10px;
+
+.container {
+    margin-left: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 220px);
+    padding: 20px;
 }
-.document-request .form-group {
+
+.profile-container,
+.document-request {
+    background-color: #fff;
+    padding: 20px;
     margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px; /* Limit the width of the centered containers */
 }
-.document-request .form-group div {
+
+.photo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 10px;
 }
-.document-request button {
+
+#upload-photo {
+    display: none;
+}
+
+.photo-upload label {
     background-color: #007bff;
     color: white;
-    border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
 }
-.document-request button:hover {
+
+.photo-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #333;
+    text-align: center;
+}
+
+strong {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group div {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
     background-color: #0056b3;
 }
