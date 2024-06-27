@@ -9,7 +9,7 @@
 <body>
   
 <div class="form-container">
-	<p class="title">Login</p>
+	<p class="title">Créer un compte! </p>
 	<form class="form"  action="{{route('save')}}" method="POST">
         @csrf
 		<div class="input-group">

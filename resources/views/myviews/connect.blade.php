@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Se Connecter</title>
-    <link rel="stylesheet" href="{{ url('CSS/connect.css') }}">
+    <link rel="stylesheet" href="{{ url('CSS/connect.css')}}">
 </head>
 <body>
   
@@ -22,14 +22,14 @@
             <div id="mywidget"></div>
            
 			<div class="forgot">
-				<a rel="noopener noreferrer" href="#">Forgot Password ?</a>
+				<a rel="noopener noreferrer" href="#">Mot de passe oublié?</a>
 			</div>
 
 		</div>
 		<button type="submit" class="sign">Login</button>
 	</form>
 	
-	<p class="signup">Don't have an account?
+	<p class="signup">Vous n'avez pas de compte?
 		<a rel="noopener noreferrer" href="{{ route('signup') }}">Sign up</a>
 	</p>
 </div>

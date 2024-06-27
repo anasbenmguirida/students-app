@@ -4,29 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
-    <link href="{{ url('CSS/bienvenue.css') }}" rel="stylesheet" >
-
+    <link href="{{ url('CSS/bienvenue.css') }}" rel="stylesheet">
 </head>
 <body>
-    
     <header>
         <nav class="navigation">
             <a href="#">Accueil</a>
             <a href="#a-propos">À propos</a>
             <a href="#contact">Contact</a>
-         </nav>
+        </nav>
     </header>
     <main>
-    <section class="main" id="main">
-      <div>
-        <h2>
-        simplifiez la gestion de vos documents<br> scolaire et affichages!
-        </h2>
-
-        <br />
-        <a href="{{ route('login') }}" class="main-btn">Se connecter</a>
-        <a href="{{ route('signup') }}" class="main-btn">S'inscrire</a>
-      </section>
+        <section class="main" id="main">
+            <div>
+                <h2>
+                    Simplifiez la gestion de vos documents<br> scolaires et affichages!
+                </h2>
+                <br />
+                <a href="{{ route('login') }}" class="main-btn">Se connecter</a>
+                <a href="{{ route('signup') }}" class="main-btn">S'inscrire</a>
+            </div>
+        </section>
     </main>
     <section id="a-propos">
         <h2>À propos</h2>

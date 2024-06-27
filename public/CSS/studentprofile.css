@@ -1,113 +1,74 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    display: flex;
-    background-color: #f5f5f5;
 }
 
 .sidebar {
-    width: 200px;
-    background-color: rgb(8, 8, 116);
-    color: #fff;
-    position: fixed;
-    height: 100%;
+    background-color: #003366;
+    color: white;
     padding: 20px;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
 }
 
 .sidebar a {
-    color: #fff;
-    text-decoration: none;
+    color: white;
     display: block;
-    margin: 10px 0;
+    margin: 15px 0;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-.container {
-    margin-left: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: calc(100% - 220px);
+.container-fluid {
+    margin-left: 250px;
     padding: 20px;
 }
 
 .profile-container,
 .document-request {
-    background-color: #fff;
+    background-color: white;
+    margin: 20px;
     padding: 20px;
-    margin-bottom: 20px;
+    border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 600px; /* Limit the width of the centered containers */
 }
 
-.photo-upload {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
+.profile-container h3,
+.document-request h3 {
+    color: #003366;
 }
 
-#upload-photo {
+.photo-preview {
+    width: 150px;
+    height: 150px;
+    background-color: #e1e1e1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.photo-upload input {
     display: none;
 }
 
 .photo-upload label {
-    background-color: #007bff;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0066cc;
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.photo-preview {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #ddd;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 10px;
-}
-
-h3 {
-    color: #333;
-    text-align: center;
-}
-
-strong {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.form-group {
-    display: flex;
-    justify-content: space-between;
-}
-
-.form-group div {
-    flex: 1;
-    margin-right: 10px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
 }
 
-button:hover {
-    background-color: #0056b3;
+.photo-upload label:hover {
+    background-color: #005bb5;
+}
+
+.form-check-label {
+    margin-left: 5px;
 }
