@@ -32,8 +32,20 @@
                 <label for="confirm_password">Confirm Password:</label>
                 <input type="password" id="confirm_password" name="password_confirmation" required>
             </div>
+            <div id="mywidget"></div>
             <button type="submit">Submit</button>
         </form>
     </div>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
+<script>
+   window.onloadTurnstileCallback = function () {
+    turnstile.render('#mywidget', {
+        sitekey: '0x4AAAAAAAcPqi00a6QZbAZd',
+        callback: function(token) {
+            console.log(`Challenge Success ${token}`);
+        },
+    });
+}; 
+</script>
 </body>
 </html>

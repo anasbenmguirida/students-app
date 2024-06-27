@@ -3,43 +3,71 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 /* General body styling */
 body {
-    font-family: "Arial", sans-serif;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
+    background-color: white;
+    color: black;
+}
+
+/* Main container styling */
+.main {
+    color: white;
+    font-size: 15.5px;
+    width: 100%;
     min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    background-image: url("/images/land.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Button styling */
+.main-btn {
+    text-decoration: none;
+    color: white;
+    background-color: royalblue;
+    font-size: 1.1em;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0.9375em 2.1875em;
+    border-radius: 15px;
+    margin-top: 20px; /* Adjust margin as needed */
+    transition: 0.7s ease;
+}
+
+.main-btn:hover {
+    background-color: blue;
+    transform: scale(1.1, 1.1);
 }
 
 /* Header and Navigation styling */
 header {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 1rem 0;
-}
-
-header nav ul {
-    list-style: none;
+    background-color: black;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 200px;
 }
 
-header nav ul li {
-    margin: 0 1rem;
-}
-
-header nav ul li a {
+.navigation a {
     text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s;
+    color: rgb(41, 124, 175);
+    font-size: 1.8em;
+    font-weight: 300;
+    padding-left: 30px;
 }
-
-header nav ul li a:hover {
-    color: #ffcc00;
+.navigation a:hover {
+    color: white;
 }
 
 /* Main content styling */
@@ -64,35 +92,9 @@ main p {
     margin-bottom: 2rem;
 }
 
-main .buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-main .buttons button {
-    background: #ffa500;
-    color: #000;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-main .buttons button:hover {
-    background: #e69500;
-}
-
-main .buttons button a {
-    text-decoration: none;
-    color: inherit;
-}
-
 /* Section styling */
 section {
-    padding: 2rem;
-    text-align: center;
+    padding: 100px 200px;
 }
 
 section h2 {
@@ -108,10 +110,11 @@ section p {
 
 /* Footer styling */
 footer {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgb(0, 0, 0);
     text-align: center;
     padding: 1rem 0;
     font-size: 0.9rem;
+    color: white;
 }
 
 footer p {

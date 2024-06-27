@@ -14,7 +14,7 @@ class MailController extends Controller
         //Mail::to('benmguiridaanas@gmail.com');
         Mail::to('benmguiridaanas@gmail.com')->send(new demandeDocument($details));
     
-        return 'Email sent successfully';
+        return '';
 
     }
 }

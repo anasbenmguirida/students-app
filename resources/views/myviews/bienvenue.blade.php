@@ -9,21 +9,25 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#a-propos">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <nav class="navigation">
+            
+                <a href="#">Accueil</a>
+                <a href="#a-propos">À propos</a>
+                <a href="#contact">Contact</a>
+            
         </nav>
     </header>
     <main>
-        <h1>Bienvenue sur notre plateforme</h1>
-        <p>Cette plateforme est destinée aux étudiants pour gérer leurs informations.</p>
-        <div class="buttons">
-            <button><a href="{{ route('login') }}">Se connecter</a></button>
-            <button><a href="{{ route('signup') }}">S'inscrire</a></button>
-        </div>
+    <section class="main" id="main">
+      <div>
+        <h2>
+        simplifiez la gestion de vos documents<br> scolaire et affichages!
+        </h2>
+
+        <br />
+        <a href="{{ route('login') }}" class="main-btn">Se connecter</a>
+        <a href="{{ route('signup') }}" class="main-btn">S'inscrire</a>
+      </section>
     </main>
     <section id="a-propos">
         <h2>À propos</h2>
