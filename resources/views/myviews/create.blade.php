@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer un compte</title>
-    <link rel="stylesheet" href="{{ url('CSS/create.css') }}">
-    
+    <title>Se Connecter</title>
+    <link rel="stylesheet" href="{{ url('CSS/connect.css') }}">
 </head>
 <body>
-    <div class="form-container">
-        <form action="{{route('save')}}" method="POST">
-            @csrf
-            <div class="form-group">
-                <h3>Creer votre compte ! </h3>
-                <label for="nom">Nom:</label>
-                <input type="text" id="nom" name="nom" required>
-            </div>
-            <div class="form-group">
-                <label for="prenom">Prénom:</label>
-                <input type="text" id="prenom" name="prenom" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="password_confirmation" required>
-            </div>
-            <div id="mywidget"></div>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
+  
+<div class="form-container">
+	<p class="title">Login</p>
+	<form class="form"  action="{{route('save')}}" method="POST">
+        @csrf
+		<div class="input-group">
+			<label for="username">Nom</label>
+			<input type="text" name="nom" id="username" >
+		</div>
+		<div class="input-group">
+			<label for="Prenom">Prenom</label>
+			<input type="text" name="prenom" id="prenom"><br>
+        </div>
+        <div class="input-group">
+			<label for="email">Email</label>
+			<input type="email" name="email" id="email"><br>
+        </div>
+        <div class="input-group">
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password"><br>
+        </div>
+        <div class="input-group">
+			<label for="passwordc">Confirm Password</label>
+			<input type="password" name="password_confirmation" id="passwordc">
+        </div>
+        
+        <div class="input-group">
+          <div id="mywidget"></div>
+        </div>
+		<button type="submit" class="sign">Submit</button>
+	</form>
+	
+	
+</div>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
 <script>
    window.onloadTurnstileCallback = function () {
     turnstile.render('#mywidget', {

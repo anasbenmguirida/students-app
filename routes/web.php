@@ -4,6 +4,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
+use Illuminate\Routing\ViewController as RoutingViewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +21,14 @@ Route::get('/' , [ViewController::class , 'bienvenue']) ;
 Route::get('/signup' , [ViewController::class , 'createAccount'])->name('signup') ;
 Route::get('/login' , [ViewController::class , 'ConnectToAccount'])->name('login'); 
 
-// route authentifie 
-Route::middleware('auth:sanctum' , 'role:admin')->get('/profile' , [ViewController::class , 'showAdminprofile'])->name('profile'); 
+// route authentifie et pour le prof
+Route::middleware('auth:sanctum' , 'role:prof')->get('/presence' , [ViewController::class , 'marquerPresence'])->name('presence'); 
+Route::middleware('auth:sanctum' , 'role:prof')->get('/profile_prof' , [ViewController::class , 'showProfprofile'])->name('profile_prof'); 
+// route des etudiants
 Route::middleware('auth:sanctum' , 'role:etudiant')->get('/profile_etu' , [ViewController::class , 'showstudentprofile'])->name('profile_etu'); 
-Route::middleware('auth:sanctum' , 'role:etudiant|admin')->get('/logout' , [AuthController::class , 'logout'])->name('logout'); 
+Route::middleware('auth:sanctum' , 'role:etudiant')->get('/affichage' , [ViewController::class , 'affichage'])->name('affichage'); 
+// route mixtes 
+Route::middleware('auth:sanctum' , 'role:etudiant|admin|prof')->get('/logout' , [AuthController::class , 'logout'])->name('logout'); 
 
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+

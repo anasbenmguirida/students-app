@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="sidebar">
-        <a href="#">Affichage</a>
+        <a href="{{ route('affichage') }}">Affichage</a>
         <a href="{{ route('logout') }}">Se deconnecter</a>
     </div>
     <div class="container">

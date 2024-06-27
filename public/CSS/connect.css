@@ -2,11 +2,11 @@
 body {
     font-family: "Arial", sans-serif;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #1a1a2e; /* Dark background for the entire body */
+    background-color: white;
 }
 
 /* Form container styling */
@@ -107,34 +107,6 @@ body {
     height: 1px;
     flex: 1 1 0%;
     background-color: rgba(55, 65, 81, 1);
-}
-
-.social-message .message {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    color: rgba(156, 163, 175, 1);
-}
-
-/* Social icons styling */
-.social-icons {
-    display: flex;
-    justify-content: center;
-}
-
-.social-icons .icon {
-    border-radius: 0.125rem;
-    padding: 0.75rem;
-    border: none;
-    background-color: transparent;
-    margin-left: 8px;
-}
-
-.social-icons .icon svg {
-    height: 1.25rem;
-    width: 1.25rem;
-    fill: #fff;
 }
 
 /* Sign up link styling */

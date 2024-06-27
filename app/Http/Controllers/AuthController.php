@@ -49,9 +49,12 @@ class AuthController extends Controller
             $user = Auth::user(); // Get the authenticated user
     
             if ($user->role == 'admin') {
-                return redirect()->route('profile');
+                return redirect()->route('profile_adm');
             } else if ($user->role == 'etudiant') {
                 return redirect()->route('profile_etu');
+            } 
+            else if ($user->role == 'prof') {
+                return redirect()->route('profile_prof');
             } else {
             return redirect()->route('login')->with('error', 'Unauthorized role.');
             }

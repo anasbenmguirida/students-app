@@ -8,14 +8,13 @@
 
 </head>
 <body>
+    
     <header>
         <nav class="navigation">
-            
-                <a href="#">Accueil</a>
-                <a href="#a-propos">À propos</a>
-                <a href="#contact">Contact</a>
-            
-        </nav>
+            <a href="#">Accueil</a>
+            <a href="#a-propos">À propos</a>
+            <a href="#contact">Contact</a>
+         </nav>
     </header>
     <main>
     <section class="main" id="main">
