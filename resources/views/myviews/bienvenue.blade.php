@@ -44,10 +44,11 @@
         <div class="container">
             <h2 class="text-center">Contact Us</h2>
             <p class="text-center">Details on how to get in touch with the platform's support team or administration.</p>
-            <form action="/send-email" method="POST" class="mt-4">
+            <form action="{{route('send-feedback')}}" method="POST" class="mt-4">
+                @csrf
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <label for="name">Nom Complet</label>
+                    <input type="text" class="form-control" id="name" name="nom" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -55,7 +56,7 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    <textarea class="form-control" id="message" name="messages" rows="4" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>

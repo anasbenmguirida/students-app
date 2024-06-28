@@ -36,7 +36,7 @@ class demandeDocument extends Mailable
     public function build()
     {
        
-        //$url = url('/api/facture/' . $this->devi->demande->facture->id);
+       
 
      return $this->subject('Mail from Example.com')->view('myviews.demande-document');;
     }

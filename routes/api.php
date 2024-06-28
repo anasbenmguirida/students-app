@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\MailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/save' , [AuthController::class , 'save'])->name('save') ; 
 Route::post('/connect' , [AuthController::class , 'login'])->name('connect') ; 
 Route::post('/sendemail' , [MailController::class , 'sendemail'])->name('sendemail') ; 
+Route::post('/send-feedback' , [FeedbackController::class , 'sendfeedback'])->name('send-feedback') ; 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
