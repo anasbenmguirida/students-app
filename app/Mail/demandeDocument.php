@@ -35,9 +35,6 @@ class demandeDocument extends Mailable
     
     public function build()
     {
-       
-       
-
-     return $this->subject('Mail from Example.com')->view('myviews.demande-document');;
+       return $this->subject('Mail from Example.com')->view('myviews.demande-document');;
     }
 }

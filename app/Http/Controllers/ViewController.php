@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ViewController extends Controller
 {
@@ -22,17 +23,17 @@ class ViewController extends Controller
     public function showstudentprofile()
     {
         $studentId = auth()->id(); 
-        $studentInformation = Etudiant::where('id', '=', $studentId)->first(); 
+        $studentInformation = User::where('id', '=', $studentId)->first(); 
         return view('myviews.student_profile', compact('studentInformation'));
     }
     public function marquerPresence(){
-        $etudiants = Etudiant::where('role', '=' ,  'etudiant')->get();
+        $etudiants = User::where('role', '=' ,  'etudiant')->get();
         return view('myviews.presence', compact('etudiants'));
        
     }
     public function showProfprofile(){
         $Idprofesseur=auth()->id() ; 
-        $profInformation=Etudiant::where('id', '=', $Idprofesseur)->first(); 
+        $profInformation=User::where('id', '=', $Idprofesseur)->first(); 
         return view('myviews.enseignant_profile' , compact('profInformation')) ; 
     }
     

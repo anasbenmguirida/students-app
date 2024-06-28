@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Etudiant ;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash; 
 use Laravel\Sanctum\Sanctum;
@@ -13,15 +14,15 @@ class AuthController extends Controller
     // fonction qui enregistre un etudiant dans la base de donnees 
     public function save(Request $request){
         $data=$request->validate([
-            'nom'=>'required|string' , 
+            'name'=>'required|string' , 
             'prenom'=>'required|string' , 
             'email'=>'required|email' , 
             'password'=>'required|string|confirmed|min:8' , 
         ]) ; 
         // date is validated then we insert it in the etuduants table  ; 
         if($data){
-            $user = Etudiant::create([
-            'nom' => $data['nom'],
+            $user = User::create([
+            'name' => $data['name'],
             'prenom' => $data['prenom'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

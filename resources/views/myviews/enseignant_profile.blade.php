@@ -21,7 +21,7 @@
                 <input type="file" id="upload-photo" name="upload-photo" accept="image/*" onchange="previewImage(event)">
             </div>
             <strong>Information Personnel</strong><br>
-            NOM  : {{$profInformation->nom}} <br>
+            NOM  : {{$profInformation->name}} <br>
             PRENOM :  {{$profInformation->prenom}}<br>
             EMAIL : {{$profInformation->email}}
         </div>

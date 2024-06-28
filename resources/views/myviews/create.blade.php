@@ -14,7 +14,7 @@
         @csrf
 		<div class="input-group">
 			<label for="username">Nom</label>
-			<input type="text" name="nom" id="username" >
+			<input type="text" name="name" id="username" >
 		</div>
 		<div class="input-group">
 			<label for="Prenom">Prenom</label>

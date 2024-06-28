@@ -22,7 +22,7 @@
                     <label for="upload-photo">Upload Photo</label>
                 </div>
                 <strong>Information Personnel</strong><br>
-                NOM: {{ $studentInformation->nom }}<br>
+                NOM: {{ $studentInformation->name }}<br>
                 PRENOM: {{ $studentInformation->prenom }}<br>
                 EMAIL: {{ $studentInformation->email }}
             </div>
