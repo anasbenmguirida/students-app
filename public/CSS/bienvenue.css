@@ -1,162 +1,62 @@
-/* Reset some default styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
-/* General body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
-/* Main container styling */
-.main {
-    font-size: 15.5px;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url("/images/class.jpg");
-    background-repeat: no-repeat;
+.jumbotron {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.navbar-nav .nav-link {
+    margin-right: 15px;
+}
+
+.navbar-nav .btn {
+    margin-right: 10px;
+}
+
+#about,
+#services,
+#contact {
+    padding: 60px 0;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+/* Fullscreen background image for the header */
+#header {
+    background-image: url("/images/books.jpg");
     background-size: cover;
     background-position: center;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-}
-
-.main h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Button styling */
-.main-btn {
-    text-decoration: none;
-    color: white;
-    background-color: royalblue;
-    font-size: 1.1em;
-    font-weight: 600;
-    display: inline-block;
-    padding: 0.9375em 2.1875em;
-    border-radius: 15px;
-    margin-top: 20px;
-    transition: 0.3s ease;
-}
-
-.main-btn:hover {
-    background-color: darkblue;
-    transform: scale(1.05);
-}
-
-/* Header and Navigation styling */
-header {
-    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh; /* Full height */
     width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 999;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navigation {
-    display: flex;
-    gap: 30px;
-}
-
-.navigation a {
-    text-decoration: none;
-    color: rgb(41, 124, 175);
-    font-size: 1.2em;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.navigation a:hover {
+    justify-content: center;
     color: white;
+    text-shadow: 1px 1px 2px black;
 }
 
-/* Main content styling */
-main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 60px; /* Adjust for fixed header */
-}
-
-main h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-main p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-/* Section styling */
+/* Ensuring proper padding and margin for sections */
 section {
-    padding: 4rem 2rem;
-    text-align: center;
+    padding: 60px 0;
 }
 
-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+/* Styling for the cards in the services section */
+.card {
+    margin-bottom: 20px;
 }
 
-section p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+/* Navbar link styles */
+.navbar-nav .nav-link {
+    margin-right: 15px;
 }
 
-/* Footer styling */
-footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .navigation {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .main h2 {
-        font-size: 2rem;
-    }
-
-    .main p {
-        font-size: 1rem;
-    }
-
-    section {
-        padding: 2rem 1rem;
-    }
-
-    section h2 {
-        font-size: 1.5rem;
-    }
-
-    section p {
-        font-size: 1rem;
-    }
+/* Adjusting button margin in the navbar */
+.navbar-nav .btn {
+    margin-right: 10px;
 }
