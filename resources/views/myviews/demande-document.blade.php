@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Demande de Document</title>
 </head>
 <body>
-     hello its working i guess
+<p>Nouvelle Demande de document de la part de la part de {{ $NomComplet }}</p>
+   
+   <p>type de decument voulus : {{$document}}</p>
 </body>
 </html>
 

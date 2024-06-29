@@ -1,74 +1,57 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
-
 .sidebar {
-    background-color: #003366;
-    color: white;
-    padding: 20px;
-    width: 250px;
+    width: 200px;
     height: 100vh;
+    background-color: #f8f9fa;
+    padding-top: 20px;
     position: fixed;
 }
-
 .sidebar a {
-    color: white;
     display: block;
-    margin: 15px 0;
+    padding: 10px 15px;
+    color: #000;
     text-decoration: none;
-    font-size: 18px;
 }
-
+.sidebar a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
 .container-fluid {
-    margin-left: 250px;
+    margin-left: 220px;
     padding: 20px;
 }
-
-.profile-container,
-.document-request {
-    background-color: white;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.photo-upload {
+    margin: 20px 0;
 }
-
-.profile-container h3,
-.document-request h3 {
-    color: #003366;
-}
-
 .photo-preview {
     width: 150px;
     height: 150px;
-    background-color: #e1e1e1;
+    border: 2px solid #ddd;
+    border-radius: 50%;
     background-size: cover;
     background-position: center;
-    border-radius: 50%;
     margin: 0 auto 10px;
 }
-
-.photo-upload input {
+.photo-upload input[type="file"] {
     display: none;
 }
-
 .photo-upload label {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #0066cc;
-    color: white;
     cursor: pointer;
-    border-radius: 5px;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
 }
-
-.photo-upload label:hover {
-    background-color: #005bb5;
+.profile-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.form-check-label {
-    margin-left: 5px;
+.document-request {
+    margin-top: 30px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

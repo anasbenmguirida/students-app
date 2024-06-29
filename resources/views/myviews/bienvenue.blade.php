@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="{{ url('CSS/bienvenue.css')}}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="/images/image.png" alt="Logo" style="width: 40px;">
+            <img src="{{ url('images/image.png') }}" alt="Logo" style="width: 40px;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,16 +20,16 @@
                 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
-                <li class="nav-item"><a class="btn btn-outline-success" href="{{route('login')}}">Login</a></li>
-                <li class="nav-item"><a class="btn btn-success ml-2" href="{{route('signup')}}">Register</a></li>
+                <li class="nav-item"><a class="btn btn-outline-light" href="{{route('login')}}">Login</a></li>
+                <li class="nav-item"><a class="btn btn-light ml-2" href="{{route('signup')}}">Register</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="jumbotron jumbotron-fluid text-center" style="background-image: url('/images/school.jpg');">
         <div class="container">
-            <h1 class="display-4">Restez informé et connecté avec votre parcours académique</h1>
-            <p class="lead">Découvrez notre plateforme dès aujourd'hui!</p>
+            <h1 class="display-4 text-white">Restez informé et connecté avec votre parcours académique</h1>
+            <p class="lead text-white">Découvrez notre plateforme dès aujourd'hui!</p>
         </div>
     </header>
 

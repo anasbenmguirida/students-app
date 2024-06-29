@@ -16,10 +16,14 @@ class demandeDocument extends Mailable
     /**
      * Create a new message instance.
      */
-    private $details ; 
-    public function __construct($details)
+    public $typeDeDocumement; 
+    public $email; 
+    public $NomComplet ;  
+    public function __construct($document,$email,$NomComplet)
     {
-        $this->details=$details;
+        $this->typeDeDocumement=$document;
+        $this->NomComplet=$NomComplet;
+        $this->email=$email;
     }
 
     /**
@@ -35,6 +39,13 @@ class demandeDocument extends Mailable
     
     public function build()
     {
-       return $this->subject('Mail from Example.com')->view('myviews.demande-document');;
+       return  $this->view('myviews.demande-document')
+       ->from($this->email, $this->NomComplet)
+       ->subject('Demande de document scolaire')
+       ->with([
+           'document' => $this->typeDeDocumement,
+           'NomComplet' => $this->NomComplet,
+           'email' => $this->email,
+       ]);
     }
 }

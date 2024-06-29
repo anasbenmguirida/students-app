@@ -6,6 +6,65 @@
     <title>Profile and Document Request</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url('CSS/studentprofile.css') }}">
+    <style>
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            position: fixed;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px 15px;
+            color: #000;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .container-fluid {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .photo-upload {
+            margin: 20px 0;
+        }
+        .photo-preview {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 10px;
+        }
+        .photo-upload input[type="file"] {
+            display: none;
+        }
+        .photo-upload label {
+            cursor: pointer;
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+        }
+        .profile-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .document-request {
+            margin-top: 30px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
     <div class="d-flex">
@@ -15,7 +74,7 @@
         </div>
         <div class="container-fluid">
             <div class="profile-container">
-                <h3>Welcome back to your profile</h3>
+                <h3 class="text-center">Welcome back to your profile</h3>
                 <div class="photo-upload text-center">
                     <div class="photo-preview" id="photo-preview"></div>
                     <input type="file" id="upload-photo" name="upload-photo" accept="image/*" onchange="previewImage(event)">

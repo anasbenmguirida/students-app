@@ -7,27 +7,26 @@
     <link rel="stylesheet" href="{{ url('CSS/profprofile.css') }}">
 </head>
 <body>
-    <div class="sidebar">
-        <a href="">Insertion des notes</a>
-        <a href="{{ route('presence') }}">Marquer la presence </a>
-        <a href="{{ route('logout') }}">Se deconnecter</a>
-    </div>
-    <div class="container">
-        <div class="profile-container">
-            <h3>Welcome back to your profile</h3>
-            <div class="photo-upload">
-                <div class="photo-preview" id="photo-preview"></div>
-                <label for="upload-photo">Upload Photo</label>
-                <input type="file" id="upload-photo" name="upload-photo" accept="image/*" onchange="previewImage(event)">
-            </div>
-            <strong>Information Personnel</strong><br>
-            NOM  : {{$profInformation->name}} <br>
-            PRENOM :  {{$profInformation->prenom}}<br>
-            EMAIL : {{$profInformation->email}}
+    <div class="d-flex">
+        <div class="sidebar">
+            <a href="#">Insertion des notes</a>
+            <a href="{{ route('presence') }}">Marquer la presence</a>
+            <a href="{{ route('logout') }}">Se déconnecter</a>
         </div>
-        
-
-        
+        <div class="container">
+            <div class="profile-container">
+                <h3>Welcome back to your profile</h3>
+                <div class="photo-upload">
+                    <div class="photo-preview" id="photo-preview"></div>
+                    <label for="upload-photo" class="btn btn-primary">Upload Photo</label>
+                    <input type="file" id="upload-photo" name="upload-photo" accept="image/*" onchange="previewImage(event)">
+                </div>
+                <strong>Information Personnel</strong><br>
+                NOM: {{$profInformation->name}}<br>
+                PRENOM: {{$profInformation->prenom}}<br>
+                EMAIL: {{$profInformation->email}}
+            </div>
+        </div>
     </div>
     <script>
         function previewImage(event) {
