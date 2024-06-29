@@ -11,13 +11,17 @@ use Illuminate\Support\Facades\Auth;
 class MailController extends Controller
 {
     public function sendemail(){
-       $user=auth()->user() ; 
-        $NomComplet=$user->nom;
-        $email=$user->email ; 
+        // we need to know which checkbox or radio button is checked before sending the email 
+       $user=Auth::user() ; 
+       //dd($user);
+       $NomComplet=$user["name"]." " . $user["prenom"] ;
+       $email=$user["email"] ; 
         $document=''; 
-        Mail::to('benmguiridaanas@gmail.com')->send(new demandeDocument($NomComplet , $email , $document));
-            return 'email sent succesfully';
-        } 
+        Mail::to('benmguiridaanas@gmail.com')->send(new demandeDocument($document , $email , $NomComplet));
+       // it should be a notification here 
+        return "email sent succesfully";
+        
+    } 
        
     
       

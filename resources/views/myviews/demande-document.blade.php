@@ -9,6 +9,7 @@
 <p>Nouvelle Demande de document de la part de la part de {{ $NomComplet }}</p>
    
    <p>type de decument voulus : {{$document}}</p>
+   <button>Approuvez</button>
 </body>
 </html>
 
