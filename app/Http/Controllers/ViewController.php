@@ -10,31 +10,31 @@ class ViewController extends Controller
 {
     //
     public function bienvenue(){
-        return view('myviews.bienvenue') ; 
+        return view('publicviews.bienvenue') ; 
     }
 
     public function ConnectToAccount(){
-        return view('myviews.connect') ; 
+        return view('publicviews.connect') ; 
     }
     public function createAccount(){
-        return view('myviews.create') ; 
+        return view('publicviews.create') ; 
     }
    
     public function showstudentprofile()
     {
         $studentId = auth()->id(); 
         $studentInformation = User::where('id', '=', $studentId)->first(); 
-        return view('myviews.student_profile', compact('studentInformation'));
+        return view('students.student_profile', compact('studentInformation'));
     }
     public function marquerPresence(){
         $etudiants = User::where('role', '=' ,  'etudiant')->get();
-        return view('myviews.presence', compact('etudiants'));
+        return view('professeur.presence', compact('etudiants'));
        
     }
     public function showProfprofile(){
         $Idprofesseur=auth()->id() ; 
         $profInformation=User::where('id', '=', $Idprofesseur)->first(); 
-        return view('myviews.enseignant_profile' , compact('profInformation')) ; 
+        return view('professeur.prof_profile' , compact('profInformation')) ; 
     }
     
 }
