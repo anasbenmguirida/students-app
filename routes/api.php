@@ -22,6 +22,7 @@ Route::post('/save' , [AuthController::class , 'save'])->name('save') ;
 Route::post('/connect' , [AuthController::class , 'login'])->name('connect') ; 
 Route::post('/sendemail' , [MailController::class , 'sendemail'])->name('sendemail') ; 
 Route::post('/send-feedback' , [FeedbackController::class , 'sendfeedback'])->name('send-feedback') ; 
+Route::post('/reset-password' , [AuthController::class , 'resetPassword'])->name('resetPassword'); 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

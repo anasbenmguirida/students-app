@@ -24,7 +24,7 @@
                 </div>
                 <div id="mywidget"></div>
                 <div class="forgot">
-                    <a href="#">Mot de passe oublié?</a>
+                    <a href="{{ route('forget') }}">Mot de passe oublié?</a>
                 </div>
                 <button type="submit" class="sign">Login</button>
             </form>

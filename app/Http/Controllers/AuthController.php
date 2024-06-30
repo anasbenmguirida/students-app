@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\forgetpassword;
 use Illuminate\Http\Request;
-use App\Models\Etudiant ;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash; 
-use Laravel\Sanctum\Sanctum;
+use Illuminate\Support\Facades\Mail ; 
+
 
 class AuthController extends Controller
 {
@@ -71,5 +72,17 @@ class AuthController extends Controller
             return redirect()->route('login'); 
         }
     }
+    public function resetPassword(){
+        // we need to check if the user has alredy an account by checking if the email exists in the database
+        $email=$_POST["email"] ; 
+        $userEmail=User::where('email', '=', $email)->first(); 
+        if($userEmail != ""){
+        //the email exist in the database => we generate an email containing the link to reset the password 
+        $link = 'http://127.0.0.1:8000/reset';
+        Mail::to($userEmail)->send(new forgetpassword($link));
+        return redirect()->back()->with('success', 'Veuillez Verifier votre boite mail pour continuer!'); ; 
+        }
+    }
+    
     
 }

@@ -36,5 +36,11 @@ class ViewController extends Controller
         $profInformation=User::where('id', '=', $Idprofesseur)->first(); 
         return view('professeur.prof_profile' , compact('profInformation')) ; 
     }
-    
+    public function forgetView(){
+        return view('publicviews.forget');
+        }
+
+        public function reset(){
+            return view('publicviews.reset');
+        }
 }

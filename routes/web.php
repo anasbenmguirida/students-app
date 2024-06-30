@@ -20,6 +20,9 @@ use Illuminate\Routing\ViewController as RoutingViewController;
 Route::get('/' , [ViewController::class , 'bienvenue']) ; 
 Route::get('/signup' , [ViewController::class , 'createAccount'])->name('signup') ;
 Route::get('/login' , [ViewController::class , 'ConnectToAccount'])->name('login'); 
+Route::get('/forget' , [ViewController::class , 'forgetView'])->name('forget'); 
+Route::get('/reset' , [ViewController::class , 'reset'])->name('reset'); 
+
 
 // route authentifie et pour le prof
 Route::middleware('auth:sanctum' , 'role:prof')->get('/presence' , [ViewController::class , 'marquerPresence'])->name('presence'); 
