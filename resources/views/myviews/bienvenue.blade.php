@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
+    
     <link rel="stylesheet" href="{{ url('CSS/bienvenue.css')}}">
 </head>
 <body>
@@ -58,11 +60,35 @@
                     <label for="message">Message</label>
                     <textarea class="form-control" id="message" name="messages" rows="4" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit" id="alert-button" class="btn btn-primary">Send Message</button>
             </form>
         </div>
     </section>
-
+    @if(session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: 'Success!',
+                    text: '{{ session ("success") }}',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                });
+            });
+        </script>
+    @endif
+    @if($errors->any())
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: 'Error!',
+                    html: '{!! implode('<br>', $errors->all()) !!}',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            });
+        </script>
+    @endif
+   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
