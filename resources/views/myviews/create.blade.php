@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Se Connecter</title>
     <link rel="stylesheet" href="{{ url('CSS/connect.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ url('JS/create.js') }}" defer></script>
 </head>
 <body>
     <div class="d-flex">
@@ -14,23 +16,23 @@
                 @csrf
                 <div class="input-group">
                     <label for="username">Nom</label>
-                    <input type="text" name="name" id="username" required>
+                    <input type="text" name="name" id="username" >
                 </div>
                 <div class="input-group">
                     <label for="prenom">Prenom</label>
-                    <input type="text" name="prenom" id="prenom" required>
+                    <input type="text" name="prenom" id="prenom" >
                 </div>
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email" >
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password">
                 </div>
                 <div class="input-group">
                     <label for="passwordc">Confirm Password</label>
-                    <input type="password" name="password_confirmation" id="passwordc" required>
+                    <input type="password" name="password_confirmation" id="passwordc">
                 </div>
                 <div id="mywidget" class="input-group"></div>
                 <button type="submit" class="sign">Submit</button>
@@ -41,15 +43,5 @@
         </div>
     </div>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
-    <script>
-        window.onloadTurnstileCallback = function () {
-            turnstile.render('#mywidget', {
-                sitekey: '0x4AAAAAAAcPqi00a6QZbAZd',
-                callback: function(token) {
-                    console.log(`Challenge Success ${token}`);
-                },
-            });
-        };
-    </script>
 </body>
 </html>

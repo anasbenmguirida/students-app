@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Se Connecter</title>
     <link rel="stylesheet" href="{{ url('CSS/connect.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ url('JS/connect.js') }}" defer></script>
 </head>
 <body>
     <div class="d-flex">
@@ -14,11 +16,11 @@
                 @csrf
                 <div class="input-group">
                     <label for="username">Email</label>
-                    <input type="email" name="email" id="username" required>
+                    <input type="email" name="email" id="email" >
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="password" id="password">
                 </div>
                 <div id="mywidget"></div>
                 <div class="forgot">
@@ -35,15 +37,5 @@
         </div>
     </div>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
-    <script>
-        window.onloadTurnstileCallback = function () {
-            turnstile.render('#mywidget', {
-                sitekey: '0x4AAAAAAAcPqi00a6QZbAZd',
-                callback: function(token) {
-                    console.log(`Challenge Success ${token}`);
-                },
-            });
-        };
-    </script>
 </body>
 </html>
