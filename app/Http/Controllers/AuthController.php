@@ -8,7 +8,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash; 
 use Illuminate\Support\Facades\Mail ; 
-
+use App\Models\Groupe;
+use PHPUnit\TextUI\Configuration\Group;
 
 class AuthController extends Controller
 {
@@ -29,8 +30,16 @@ class AuthController extends Controller
             'password' => Hash::make($data['password']),
             'role' => 'etudiant',
             ]);
+            //dont do this kids hahahahahaahaha
+            $strings = ["AP1", "AP2", "GINF1", "GINF2", "GINF3"];
+            $randomKey = array_rand($strings);
+            $randomString = $strings[$randomKey];
+            $GroupeEtudiant=Groupe::create([
+                'nom_grp'=>$randomString , 
+                'id_etu'=>$user['id'] , 
+            ]);
         }
-        if($user){
+        if($user && $GroupeEtudiant){
         return redirect()->route('login') ; 
         }
         else{

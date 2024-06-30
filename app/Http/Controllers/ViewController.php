@@ -40,7 +40,11 @@ class ViewController extends Controller
         return view('publicviews.forget');
         }
 
-        public function reset(){
-            return view('publicviews.reset');
+    public function reset(){
+        return view('publicviews.reset');
         }
-}
+    public function selectGrp(){
+        return view('professeur.choose-groupe');
+    }
+     
+    }

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile and Document Request</title>
+    <title>Profile Enseignant</title>
     <link rel="stylesheet" href="{{ url('CSS/profprofile.css') }}">
 </head>
 <body>
     <div class="d-flex">
         <div class="sidebar">
-            <a href="#">Insertion des notes</a>
+            <a href="{{ route('selectGrp') }}">Insertion des notes</a>
             <a href="{{ route('presence') }}">Marquer la presence</a>
             <a href="{{ route('logout') }}">Se déconnecter</a>
         </div>
