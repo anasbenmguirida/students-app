@@ -31,7 +31,7 @@ class AuthController extends Controller
             'role' => 'etudiant',
             ]);
             //dont do this kids hahahahahaahaha
-            $strings = ["AP1", "AP2", "GINF1", "GINF2", "GINF3"];
+            $strings = ["GRP1", "GRP2", "GRP3", "GRP4", "GRP5"];
             $randomKey = array_rand($strings);
             $randomString = $strings[$randomKey];
             $GroupeEtudiant=Groupe::create([

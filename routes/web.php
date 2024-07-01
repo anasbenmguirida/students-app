@@ -20,7 +20,7 @@ Route::get('/reset' , [ViewController::class , 'reset'])->name('reset');
 Route::middleware('auth:sanctum' , 'role:prof')->get('/presence' , [ViewController::class , 'marquerPresence'])->name('presence'); 
 Route::middleware('auth:sanctum' , 'role:prof')->get('/profile_prof' , [ViewController::class , 'showProfprofile'])->name('profile_prof'); 
 Route::middleware('auth:sanctum' , 'role:prof')->get('/groupe-etu' , [ViewController::class , 'selectGrp'])->name('selectGrp'); 
-Route::middleware('auth:sanctum' , 'role:prof')->post('/insertion-notes' , [ProfController::class , 'insererNote'])->name('insertion'); 
+
 // route des etudiants
 Route::middleware('auth:sanctum' , 'role:etudiant')->get('/profile_etu' , [ViewController::class , 'showstudentprofile'])->name('profile_etu'); 
 Route::middleware('auth:sanctum' , 'role:etudiant')->get('/affichage' , [ViewController::class , 'affichage'])->name('affichage'); 

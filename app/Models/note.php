@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Matiere extends Model
+class note extends Model
 {
     use HasFactory;
-    
     protected $fillable=[
-        'libelle', 
-        'id_ens'
+        'id_mat' , 
+        'id_etu' ,
+        'note' 
     ];
 }

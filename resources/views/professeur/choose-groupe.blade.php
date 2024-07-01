@@ -9,16 +9,17 @@
 <body>
 
 <div class="container mt-5">
-    <form id="selectionForm" method="POST" action="{{ route('insertion') }}">
+    <form action="{{ route('getstudentByGrp') }}" id="selectionForm" method="post" >
         @csrf
+        @method('post')
         <div class="form-group">
             <label for="exampleFormControlSelect1">Veuillez Selectionnez la filiere concerne !</label>
             <select class="form-control" id="exampleFormControlSelect1" name="filiere">
-                <option value="AP1">AP1</option>
-                <option value="AP2">AP2</option>
-                <option value="GINF1">GINF1</option>
-                <option value="GINF2">GINF2</option>
-                <option value="GINF3">GINF3</option>
+                <option value="GRP1">GRP1</option>
+                <option value="GRP2">GRP2</option>
+                <option value="GRP3">GRP3</option>
+                <option value="GRP4">GRP4</option>
+                <option value="GRP5">GRP5</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

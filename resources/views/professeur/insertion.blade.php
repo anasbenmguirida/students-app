@@ -9,11 +9,12 @@
 <body>
 <div class="container mt-5">
     <h3>Insertion des Notes</h3>
-    <form method="POST" action="">
+    <form  action="{{route('store-grade')}}" method="post">
         @csrf
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
+                  
                     <th>Nom Etudiant</th>
                     <th>Prénom Etudiant</th>
                     <th>Note</th>
@@ -22,6 +23,8 @@
             <tbody>
                 @foreach($GroupeEtudiants as $user)
                     <tr>
+                        
+                       
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->prenom }}</td>
                         <td>
