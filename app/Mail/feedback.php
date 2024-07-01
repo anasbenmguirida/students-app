@@ -41,7 +41,7 @@ class feedback extends Mailable
      */
     public function build()
     {
-        return $this->view('myviews.feedback')
+        return $this->view('publicviews.feedback')
                     ->from($this->email, $this->nom)
                     ->subject('New Feedback Message')
                     ->with([
