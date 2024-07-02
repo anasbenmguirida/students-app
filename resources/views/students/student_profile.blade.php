@@ -6,6 +6,7 @@
     <title>Profile and Document Request</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url('CSS/studentprofile.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
    
 </head>
 <body>
@@ -70,5 +71,17 @@
             }
         }
     </script>
+    @if(session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: 'Success!',
+                    text: '{{ session ("success") }}',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                });
+            });
+        </script>
+    @endif
 </body>
 </html>

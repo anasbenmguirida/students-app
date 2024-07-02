@@ -47,7 +47,7 @@ use App\Models\Matiere ;
 
     }
 
-    return redirect()->back()->with('success', 'Notes inserted successfully.');
+    return redirect()->back()->with('success', 'Les notes sont bien enregistrer!');
 }
 }
     

@@ -28,10 +28,10 @@ Route::post('/reset-password' , [AuthController::class , 'resetPassword'])->name
 
 Route::post('/store-grade' , [ProfController::class , 'storeGrades'])->name('store-grade'); 
 
-Route::post('/student-info' , [ProfController::class , 'getstudentByGrp'])->name('getstudentByGrp'); 
 
 
-//Route::middleware('auth:sanctum' , 'role:prof')->post('/insertion-notes' , [ProfController::class , 'insererNote'])->name('insertion'); 
+
+
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

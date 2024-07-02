@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insertion des Notes</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
 <div class="container mt-5">
@@ -23,12 +24,10 @@
             <tbody>
                 @foreach($GroupeEtudiants as $user)
                     <tr>
-                        
-                       
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->prenom }}</td>
                         <td>
-                            <input type="number" name="notes[{{ $user->id }}]" class="form-control" min="0" max="20" step="0.1" required>
+                            <input type="number" name="notes[{{ $user->id }}]" class="form-control" min="0" max="20" required>
                         </td>
                     </tr>
                 @endforeach
@@ -37,6 +36,18 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+  @if(session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: 'Success!',
+                    text: '{{ session ("success") }}',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                });
+            });
+        </script>
+    @endif
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

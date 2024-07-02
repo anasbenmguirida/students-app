@@ -19,7 +19,7 @@ class MailController extends Controller
         $document=''; 
         Mail::to('benmguiridaanas@gmail.com')->send(new demandeDocument($document , $email , $NomComplet));
        // it should be a notification here 
-        return "email sent succesfully";
+       return redirect()->back()->with('success', 'Votre demande a été enregitré!');
         
     } 
        

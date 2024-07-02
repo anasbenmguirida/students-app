@@ -28,7 +28,7 @@ class ViewController extends Controller
     }
     public function marquerPresence(){
         $etudiants = User::where('role', '=' ,  'etudiant')->get();
-        return view('professeur.presence', compact('etudiants'));
+        return view('professeur.precence', compact('etudiants'));
        
     }
     public function showProfprofile(){

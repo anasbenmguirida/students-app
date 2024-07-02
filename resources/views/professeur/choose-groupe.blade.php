@@ -9,9 +9,9 @@
 <body>
 
 <div class="container mt-5">
-    <form action="{{ route('getstudentByGrp') }}" id="selectionForm" method="post" >
+    <form action="{{ route('getstudentByGrp') }}" id="selectionForm" method="get" >
         @csrf
-        @method('post')
+       
         <div class="form-group">
             <label for="exampleFormControlSelect1">Veuillez Selectionnez la filiere concerne !</label>
             <select class="form-control" id="exampleFormControlSelect1" name="filiere">

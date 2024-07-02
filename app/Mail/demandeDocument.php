@@ -39,7 +39,7 @@ class demandeDocument extends Mailable
     
     public function build()
     {
-       return  $this->view('myviews.demande-document')
+       return  $this->view('students.demande-document')
        ->from($this->email, $this->NomComplet)
        ->subject('Demande de document scolaire')
        ->with([
