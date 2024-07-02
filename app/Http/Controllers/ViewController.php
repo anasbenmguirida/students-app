@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Etudiant;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use App\Models\note ; 
+use Illuminate\Support\Facades\DB;
 
 class ViewController extends Controller
 {
@@ -46,5 +49,26 @@ class ViewController extends Controller
     public function selectGrp(){
         return view('professeur.choose-groupe');
     }
-     
+    
+    
+ public function affichage()
+{
+    // We need to select les matières avec les notes 
+    $student = Auth::user(); 
+    $studentId = $student->id;
+
+    $GroupeEtudiants = note::select('matieres.libelle', 'notes.note')
+    ->join('matieres', 'notes.id_mat', '=', 'matieres.id')
+    ->where('notes.id_etu', $studentId)
+    ->distinct()
+    ->get();
+
+    return view('students.affichage', compact('GroupeEtudiants'));
+}
+
+    
+        
     }
+    
+     
+    
