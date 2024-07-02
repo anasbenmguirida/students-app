@@ -29,11 +29,9 @@ class ViewController extends Controller
         $studentInformation = User::where('id', '=', $studentId)->first(); 
         return view('students.student_profile', compact('studentInformation'));
     }
-    public function marquerPresence(){
-        $etudiants = User::where('role', '=' ,  'etudiant')->get();
-        return view('professeur.precence', compact('etudiants'));
+  
        
-    }
+    
     public function showProfprofile(){
         $Idprofesseur=auth()->id() ; 
         $profInformation=User::where('id', '=', $Idprofesseur)->first(); 
@@ -48,6 +46,9 @@ class ViewController extends Controller
         }
     public function selectGrp(){
         return view('professeur.choose-groupe');
+    }
+    public function choixGrp(){
+        return view('professeur.grp-abscence') ; 
     }
     
     

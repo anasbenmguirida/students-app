@@ -28,7 +28,7 @@
         </div>
     </nav>
 
-    <header class="jumbotron jumbotron-fluid text-center" style="background-image: url('/images/school.jpg');">
+    <header class="jumbotron jumbotron-fluid text-center" style="background-image: url('/images/prof.jpg');">
         <div class="container">
             <h1 class="display-4 text-white">Restez informé et connecté avec votre parcours académique</h1>
             <p class="lead text-white">Découvrez notre plateforme dès aujourd'hui!</p>
@@ -38,14 +38,14 @@
     <section id="about" class="py-5">
         <div class="container">
             <h2 class="text-center">About Us</h2>
-            <p class="text-center">Information about the platform, its mission, vision, and what it offers to students.</p>
+            <p class="text-center">Notre plateforme en ligne simplifie l'inscription, la gestion des notes et le suivi des présences des étudiants. Facile à utiliser et sécurisée, elle permet aux étudiants et aux enseignants de gérer efficacement les aspects académiques essentiels</p>
         </div>
     </section>
 
     <section id="contact" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center">Contact Us</h2>
-            <p class="text-center">Details on how to get in touch with the platform's support team or administration.</p>
+            <p class="text-center">Vous pouvez nous contacter en remplissant ce formulaire..</p>
             <form action="{{route('send-feedback')}}" method="POST" class="mt-4">
                 @csrf
                 <div class="form-group">
@@ -60,7 +60,7 @@
                     <label for="message">Message</label>
                     <textarea class="form-control" id="message" name="messages" rows="4" required></textarea>
                 </div>
-                <button type="submit" id="alert-button" class="btn btn-primary">Send Message</button>
+                <button type="submit" id="alert-button" class="btn btn-primary">Envoyer</button>
             </form>
         </div>
     </section>

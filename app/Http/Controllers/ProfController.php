@@ -23,20 +23,17 @@ use App\Models\Matiere ;
         
 
     public function storeGrades(Request $request)
-{
+    {
     // Validate the input
     $notes = $request->input('notes');
-
     // Get the current professor's ID
     $profInformations = Auth::user();
     $profId = $profInformations->id;
-
     // Get the ID of the matière enseignée by the current professor
     $MatiereEnseigne = Matiere::where('id_ens', '=', $profId)->first();
     $idMatiere = $MatiereEnseigne->id;
-
     // Iterate over each note
-   $data = [];
+    $data = [];
         foreach ($notes as $studentId => $note) {
             $data[] = [
                 'id_etu' => $studentId,
@@ -48,6 +45,14 @@ use App\Models\Matiere ;
     }
 
     return redirect()->back()->with('success', 'Les notes sont bien enregistrer!');
+}
+public function grpAbscences(Request $request){
+    $selectedFiliere = $request->input('filiere');
+    $GroupeEtudiants = User::join('groupes', 'users.id', '=', 'groupes.id_etu')
+        ->where('groupes.nom_grp', $selectedFiliere)
+        ->select('users.id','users.name', 'users.prenom')
+        ->get();
+    return view('professeur.precence', compact('GroupeEtudiants'));
 }
 public function submitForm(Request $request)
 {

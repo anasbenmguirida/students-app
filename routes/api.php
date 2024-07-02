@@ -30,6 +30,8 @@ Route::post('/sendemail' , [MailController::class , 'sendemail'])->name('sendema
 
 // prof
 Route::post('/store-grade' , [ProfController::class , 'storeGrades'])->name('store-grade'); 
+Route::get('/get-students' , [ProfController::class , 'grpAbscences'])->name('get-students'); 
+Route::post('/store-grade' , [ProfController::class , 'storeGrades'])->name('store-grade'); 
 Route::post('/submit-form', [ProfController::class, 'submitForm'])->name('submitForm');
 
 

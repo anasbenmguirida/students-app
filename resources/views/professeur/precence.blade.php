@@ -80,7 +80,7 @@
 <div class="d-flex">
     <div class="sidebar">
         <a href="{{ route('selectGrp') }}"><i class="fa fa-pencil"></i> Insertion des notes</a>
-        <a href="{{ route('presence') }}"><i class="fa fa-check"></i> Marquer la presence</a>
+        <a href="{{ route('grp-abscence') }}"><i class="fa fa-check"></i> Marquer la presence</a>
         <a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Se déconnecter</a>
     </div>
 
@@ -97,9 +97,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($etudiants as $etudiant)
+                    @foreach ($GroupeEtudiants as $etudiant)
                     <tr>
-                        <td>{{ $etudiant->nom }} {{ $etudiant->prenom }}</td>
+                        <td>{{ $etudiant->name }} {{ $etudiant->prenom }}</td>
                         <td><input type="checkbox" class="form-check-input student-checkbox"></td>
                         <td><input type="checkbox" class="form-check-input student-checkbox"></td>
                     </tr>

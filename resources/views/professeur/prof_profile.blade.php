@@ -10,7 +10,7 @@
     <div class="d-flex">
         <div class="sidebar">
             <a href="{{ route('selectGrp') }}">Insertion des notes</a>
-            <a href="{{ route('presence') }}">Marquer la presence</a>
+            <a href="{{ route('grp-abscence') }}">Marquer la presence</a>
             <a href="{{ route('logout') }}">Se déconnecter</a>
         </div>
         <div class="container">
