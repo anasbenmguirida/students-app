@@ -18,16 +18,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// form routes 
+// form routes and public
 Route::post('/save' , [AuthController::class , 'save'])->name('save') ; 
 Route::post('/connect' , [AuthController::class , 'login'])->name('connect') ; 
-Route::post('/sendemail' , [MailController::class , 'sendemail'])->name('sendemail') ; 
 Route::post('/send-feedback' , [FeedbackController::class , 'sendfeedback'])->name('send-feedback') ; 
+
 Route::post('/reset-password' , [AuthController::class , 'resetPassword'])->name('resetPassword'); 
+//etudiant demande un document  
+Route::post('/sendemail' , [MailController::class , 'sendemail'])->name('sendemail') ; 
 
 
+// prof
 Route::post('/store-grade' , [ProfController::class , 'storeGrades'])->name('store-grade'); 
-
+Route::post('/submit-form', [ProfController::class, 'submitForm'])->name('submitForm');
 
 
 

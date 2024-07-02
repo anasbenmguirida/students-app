@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ViewController;
+use App\Http\Controllers\PDFController ; 
 
 
 
@@ -21,6 +22,7 @@ Route::middleware('auth:sanctum' , 'role:prof')->get('/presence' , [ViewControll
 Route::middleware('auth:sanctum' , 'role:prof')->get('/profile_prof' , [ViewController::class , 'showProfprofile'])->name('profile_prof'); 
 Route::middleware('auth:sanctum' , 'role:prof')->get('/groupe-etu' , [ViewController::class , 'selectGrp'])->name('selectGrp'); 
 Route::middleware('auth:sanctum' , 'role:prof')->get('/student-info' , [ProfController::class , 'getstudentByGrp'])->name('getstudentByGrp'); 
+Route::get('/generate-pdf', [PDFController::class, 'generatePDF'])->name('generatePDF');
 // route des etudiants
 Route::middleware('auth:sanctum' , 'role:etudiant')->get('/profile_etu' , [ViewController::class , 'showstudentprofile'])->name('profile_etu'); 
 Route::middleware('auth:sanctum' , 'role:etudiant')->get('/affichage' , [ViewController::class , 'affichage'])->name('affichage'); 

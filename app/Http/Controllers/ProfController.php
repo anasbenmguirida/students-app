@@ -49,6 +49,13 @@ use App\Models\Matiere ;
 
     return redirect()->back()->with('success', 'Les notes sont bien enregistrer!');
 }
+public function submitForm(Request $request)
+{
+    $etudiants = $request->input('etudiants'); // Assuming you have an array of student data
+    $request->session()->put('etudiants', $etudiants);
+
+    return redirect()->route('generatePDF');
+}
 }
     
     

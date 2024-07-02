@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.d-flex {
+    display: flex;
+}
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #343a40;
+    padding: 15px;
+}
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.sidebar a:hover {
+    background-color: #495057;
+}
+.container {
+    flex: 1;
+    padding: 20px;
+}
