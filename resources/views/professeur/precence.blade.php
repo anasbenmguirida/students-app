@@ -6,108 +6,44 @@
     <title>Liste des étudiants</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        .d-flex {
-            display: flex;
-        }
-
-        .sidebar {
-            width: 200px;
-            height: 100vh;
-            background-color: #343a40;
-            padding: 15px;
-            position: fixed;
-        }
-
-        .sidebar a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-
-        .sidebar a:hover {
-            background-color: #495057;
-        }
-
-        .container {
-            flex: 1;
-            padding: 20px;
-            background: #fff;
-            margin-left: 250px;
-            margin-right: 250px;
-            margin-bottom: 250px;
-            
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .table th, .table td {
-            padding: 15px;
-            text-align: left;
-            vertical-align: middle; /* Vertically centers the content */
-        }
-
-        .table th {
-            background-color: skyblue;
-        }
-
-        .form-check-input {
-            transform: scale(1.2);
-        }
-
-        .btn-submit {
-            display: block;
-            width: 100%;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url('CSS/precence.css')}}">
 </head>
 <body>
 <div class="d-flex">
     <div class="sidebar">
         <a href="{{ route('selectGrp') }}"><i class="fa fa-pencil"></i> Insertion des notes</a>
-        <a href="{{ route('grp-abscence') }}"><i class="fa fa-check"></i> Marquer la presence</a>
+        <a href="{{ route('grp-abscence') }}"><i class="fa fa-check"></i> Marquer la présence</a>
         <a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Se déconnecter</a>
     </div>
 
     <div class="container">
-        <h1>Liste des étudiants</h1>
-        <form action="{{ route('submitForm') }}" method="post" >
-            @csrf
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Nom étudiant</th>
-                        <th>Présent</th>
-                        <th>Absent</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($GroupeEtudiants as $etudiant)
-                    <tr>
-                        <td>{{ $etudiant->name }} {{ $etudiant->prenom }}</td>
-                        <td><input type="checkbox" class="form-check-input student-checkbox"></td>
-                        <td><input type="checkbox" class="form-check-input student-checkbox"></td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <button type="submit" class="btn btn-primary btn-submit">Submit</button>
-        </form>
+    
+        <h1>Liste des présences : {{$selectedFiliere}}</h1>
+        <form action="{{ route('generate-PDF') }}" method="post" id="attendance-form">
+    @csrf
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Nom étudiant</th>
+                <th>Présent</th>
+                <th>Absent</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($GroupeEtudiants as $etudiant)
+            <tr>
+                <td>{{ $etudiant->name }} {{ $etudiant->prenom }}</td>
+                <td><input type="checkbox" class="form-check-input student-checkbox" name="GroupeEtudiants[{{ $loop->index }}][present]" value="1"></td>
+                <td><input type="checkbox" class="form-check-input student-checkbox" name="GroupeEtudiants[{{ $loop->index }}][absent]" value="1"></td>
+                <input type="hidden" name="GroupeEtudiants[{{ $loop->index }}][name]" value="{{ $etudiant->name }}">
+                <input type="hidden" name="GroupeEtudiants[{{ $loop->index }}][prenom]" value="{{ $etudiant->prenom }}">
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+</form>
+
     </div>
 </div>
 
@@ -129,5 +65,6 @@
         });
     });
 </script>
+
 </body>
 </html>

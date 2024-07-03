@@ -5,6 +5,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProfController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\PDFController; 
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +33,9 @@ Route::post('/sendemail' , [MailController::class , 'sendemail'])->name('sendema
 Route::post('/store-grade' , [ProfController::class , 'storeGrades'])->name('store-grade'); 
 Route::get('/get-students' , [ProfController::class , 'grpAbscences'])->name('get-students'); 
 Route::post('/store-grade' , [ProfController::class , 'storeGrades'])->name('store-grade'); 
-Route::post('/submit-form', [ProfController::class, 'submitForm'])->name('submitForm');
+Route::post('/generate' , [PDFController::class , 'generatePDF'])->name('generate-PDF'); 
+
+//Route::post('/submit-form', [ProfController::class, 'submitForm'])->name('submit-form');
 Route::post('/update-photo', [ProfController::class, 'saveImage'])->name('update-photo');
 
 

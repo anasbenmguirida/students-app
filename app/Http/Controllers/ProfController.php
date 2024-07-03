@@ -52,16 +52,17 @@ use App\Models\Matiere ;
             ->where('groupes.nom_grp', $selectedFiliere)
             ->select('users.id','users.name', 'users.prenom')
             ->get();
-        return view('professeur.precence', compact('GroupeEtudiants'));
+        return view('professeur.precence', compact('GroupeEtudiants' , 'selectedFiliere'));
     }
     
     public function submitForm(Request $request)
     {
-        $etudiants = $request->input('etudiants');
-        $request->session()->put('etudiants', $etudiants);
+        //$etudiants = $request->input('etudiants');
+        dd($request);
+        /*$request->session()->put('etudiants', $etudiants);
 
-        return redirect()->route('generatePDF');
-    }
+        return view('professeur.pdf_view' , compact($etudiants));
+    */}
 
     public function saveImage(Request $request) {
         // Validate the input
@@ -73,19 +74,14 @@ use App\Models\Matiere ;
         $image = $request->file('image');
         $profInformations = Auth::user();
         $profId = $profInformations->id;
-    
         // Create a unique filename for the image
         $imageName = time() . '.' . $image->getClientOriginalExtension();
-    
-        // Move the image to the public/images directory
+        // the image is stored in the public/images directory
         $image->move(public_path('images'), $imageName);
-    
-        // Get the image path
+         // Get the image path
         $imagePath = 'images/' . $imageName;
-    
         // Update the user's photo path in the database
         $query = DB::update('update users set image = ? where id = ?', [$imagePath, $profId]);
-    
         if ($query) {
             return redirect()->back()->with('success', 'Votre photo a été bien sauvegardée!');
         } else {

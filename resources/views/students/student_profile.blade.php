@@ -17,12 +17,16 @@
         </div>
         <div class="container-fluid">
             <div class="profile-container">
-                <h3 class="text-center">Welcome back to your profile</h3>
-                <div class="photo-upload text-center">
-                    <div class="photo-preview" id="photo-preview"></div>
-                    <input type="file" id="upload-photo" name="upload-photo" accept="image/*" onchange="previewImage(event)">
+                <h3 class="text-center">Bienvenue a votre espace etudiant! </h3>
+                <form action="{{ route('update-photo') }}" method="POST" enctype="multipart/form-data" class="mb-3">
+                    @csrf
+                    <div class="mb-3">
+                    <div class="photo-preview mb-3" id="photo-preview" style="background-image: url('{{ asset($studentInformation->image) }}'); width: 150px; height: 150px; background-size: cover; border-radius: 50%;"></div>
+                    <input type="file" id="upload-photo" name="image" accept="image/*" onchange="previewImage(event)">
                     <label for="upload-photo">Upload Photo</label>
-                </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Save Photo</button>
+                </form>
                 <strong>Information Personnel</strong><br>
                 NOM: {{ $studentInformation->name }}<br>
                 PRENOM: {{ $studentInformation->prenom }}<br>

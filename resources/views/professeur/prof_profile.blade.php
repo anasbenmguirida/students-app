@@ -26,7 +26,7 @@
         </nav>
         <div class="container p-4">
             <div class="profile-container">
-                <h3>Welcome back to your profile</h3>
+                <h3>Bienvenue a votre espace enseignant!</h3>
                 <form action="{{ route('update-photo') }}" method="POST" enctype="multipart/form-data" class="mb-3">
                     @csrf
                     <div class="mb-3">
