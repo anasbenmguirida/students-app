@@ -7,29 +7,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url('CSS/studentprofile.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
-   
+    
 </head>
 <body>
     <div class="d-flex">
         <div class="sidebar">
+            <a href="{{ route('profile_etu') }}">Profile</a>
             <a href="{{ route('affichage') }}">Affichage</a>
             <a href="{{ route('logout') }}">Se déconnecter</a>
         </div>
         <div class="container-fluid">
             <div class="profile-container">
-                <h3 class="text-center">Bienvenue a votre espace etudiant! </h3>
+                <h3 class="text-center">Bienvenue à votre espace étudiant!</h3>
                 <form action="{{ route('update-photo') }}" method="POST" enctype="multipart/form-data" class="mb-3">
                     @csrf
                     <div class="mb-3">
-                    <div class="photo-preview mb-3" id="photo-preview" style="background-image: url('{{ asset($studentInformation->image) }}'); width: 150px; height: 150px; background-size: cover; border-radius: 50%;"></div>
-                    <input type="file" id="upload-photo" name="image" accept="image/*" onchange="previewImage(event)">
-                    <label for="upload-photo">Upload Photo</label>
+                        <div class="photo-preview mb-3" id="photo-preview" style="background-image: url('{{ asset($studentInformation->image) }}'); width: 150px; height: 150px; background-size: cover; border-radius: 50%;"></div>
+                        <label for="upload-photo" class="custom-file-upload">Choisir une photo</label>
+                        <input type="file" id="upload-photo" name="image" accept="image/*" onchange="previewImage(event)">
                     </div>
-                    <button type="submit" class="btn btn-success">Save Photo</button>
+                    <button type="submit" class="btn btn-success">Changer</button>
                 </form>
                 <strong>Information Personnel</strong><br>
                 NOM: {{ $studentInformation->name }}<br>
-                PRENOM: {{ $studentInformation->prenom }}<br>
+                PRÉNOM: {{ $studentInformation->prenom }}<br>
                 EMAIL: {{ $studentInformation->email }}
             </div>
             <div class="document-request">
@@ -80,7 +81,7 @@
             document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
                     title: 'Success!',
-                    text: '{{ session ("success") }}',
+                    text: '{{ session("success") }}',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 });

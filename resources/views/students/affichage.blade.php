@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Notes</title>
+    <title>Consultation des notes</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .sidebar {
@@ -37,6 +37,7 @@
 </head>
 <body>
     <div class="sidebar">
+        <a href="{{ route('profile_etu') }}">Profile</a>
         <a href="{{ route('affichage') }}">Affichage</a>
         <a href="{{ route('logout') }}">Se déconnecter</a>
     </div>

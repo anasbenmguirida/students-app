@@ -11,30 +11,32 @@
 </head>
 <body>
     <div class="d-flex">
-        <nav class="sidebar bg-light border-right">
+        <nav class="sidebar bg-dark text-white">
             <div class="list-group list-group-flush">
-                <a href="{{ route('selectGrp') }}" class="list-group-item list-group-item-action">
+                <a href="{{ route('profile_prof') }}" class="list-group-item list-group-item-action bg-dark text-white">
+                    <i class="fa-solid fa-user"></i> Profile
+                </a>
+                <a href="{{ route('selectGrp') }}" class="list-group-item list-group-item-action bg-dark text-white">
                     <i class="fas fa-pencil-alt me-2"></i> Insertion des notes
                 </a>
-                <a href="{{ route('grp-abscence') }}" class="list-group-item list-group-item-action">
+                <a href="{{ route('grp-abscence') }}" class="list-group-item list-group-item-action bg-dark text-white">
                     <i class="fas fa-user-check me-2"></i> Marquer la présence
                 </a>
-                <a href="{{ route('logout') }}" class="list-group-item list-group-item-action">
+                <a href="{{ route('logout') }}" class="list-group-item list-group-item-action bg-dark text-white">
                     <i class="fas fa-sign-out-alt me-2"></i> Se déconnecter
                 </a>
             </div>
         </nav>
         <div class="container p-4">
             <div class="profile-container">
-                <h3>Bienvenue a votre espace enseignant!</h3>
+                <h3>Bienvenue à votre espace enseignant</h3>
                 <form action="{{ route('update-photo') }}" method="POST" enctype="multipart/form-data" class="mb-3">
                     @csrf
                     <div class="mb-3">
                         <div class="photo-preview mb-3" id="photo-preview" style="background-image: url('{{ asset($profInformation->image) }}'); width: 150px; height: 150px; background-size: cover; border-radius: 50%;"></div>
-                        <label for="upload-photo" class="btn btn-primary">Upload Photo</label>
                         <input type="file" id="upload-photo" name="image" accept="image/*" class="form-control mt-2" onchange="previewImage(event)">
                     </div>
-                    <button type="submit" class="btn btn-success">Save Photo</button>
+                    <button type="submit" class="btn btn-success">Changer</button>
                 </form>
                 <div>
                     <strong>Information Personnel</strong><br>

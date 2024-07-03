@@ -13,6 +13,7 @@
     
 <div class="d-flex">
     <div class="sidebar">
+    <a href="{{ route('profile_prof') }}"><i class="fa-solid fa-user"></i> Profile</a>
         <a href="{{ route('selectGrp') }}"><i class="fa fa-pencil"></i> Insertion des notes</a>
         <a href="{{ route('grp-abscence') }}"><i class="fa fa-check"></i> Marquer la presence</a>
         <a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Se déconnecter</a>

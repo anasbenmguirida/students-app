@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Dropdown Select</title>
+    <title>Groupe</title>
     <link rel="stylesheet" href="{{ url('CSS/insertion.css')}}">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -40,6 +40,7 @@
 <body>
 <div class="d-flex">
     <div class="sidebar">
+    <a href="{{ route('profile_prof') }}"><i class="fa-solid fa-user"></i> Profile</a>
         <a href="{{ route('selectGrp') }}"><i class="fa fa-pencil"></i> Insertion des notes</a>
         <a href="{{ route('grp-abscence') }}"><i class="fa fa-check"></i> Marquer la presence</a>
         <a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Se déconnecter</a>
