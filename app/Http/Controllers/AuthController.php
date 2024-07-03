@@ -29,6 +29,7 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role' => 'etudiant',
+            
             ]);
             //dont do this kids hahahahahaahaha
             $strings = ["GRP1", "GRP2", "GRP3", "GRP4", "GRP5"];
