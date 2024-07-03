@@ -33,6 +33,7 @@ Route::post('/store-grade' , [ProfController::class , 'storeGrades'])->name('sto
 Route::get('/get-students' , [ProfController::class , 'grpAbscences'])->name('get-students'); 
 Route::post('/store-grade' , [ProfController::class , 'storeGrades'])->name('store-grade'); 
 Route::post('/submit-form', [ProfController::class, 'submitForm'])->name('submitForm');
+Route::post('/update-photo', [ProfController::class, 'saveImage'])->name('update-photo');
 
 
 
