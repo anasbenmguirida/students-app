@@ -55,21 +55,13 @@ use App\Models\Matiere ;
         return view('professeur.precence', compact('GroupeEtudiants' , 'selectedFiliere'));
     }
     
-    public function submitForm(Request $request)
-    {
-        //$etudiants = $request->input('etudiants');
-        dd($request);
-        /*$request->session()->put('etudiants', $etudiants);
-
-        return view('professeur.pdf_view' , compact($etudiants));
-    */}
+    
 
     public function saveImage(Request $request) {
         // Validate the input
         $validatedData = $request->validate([
-            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',//(2MB max)
         ]);
-    
         // Get the image from the request
         $image = $request->file('image');
         $profInformations = Auth::user();
@@ -80,7 +72,7 @@ use App\Models\Matiere ;
         $image->move(public_path('images'), $imageName);
          // Get the image path
         $imagePath = 'images/' . $imageName;
-        // Update the user's photo path in the database
+        // stocker que le path in the database 
         $query = DB::update('update users set image = ? where id = ?', [$imagePath, $profId]);
         if ($query) {
             return redirect()->back()->with('success', 'Votre photo a été bien sauvegardée!');
